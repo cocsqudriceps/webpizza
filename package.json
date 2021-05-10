@@ -4,9 +4,10 @@
   "description": "Mern pizza project",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"nodemon ./dist/server.bundle.js \" \"webpack serve --mode development --open\"",
+    "start": "nodemon ./dist/server.bundle.js",
     "build": "webpack --mode production",
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+    "devServ": "webpack serve --mode development --open"
   },
   "keywords": [],
   "author": "Gogitidze Maxim <cocsqudriceps@yandex.ru>",
@@ -23,25 +24,36 @@
     "useTabs": true
   },
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "config": "^3.3.6",
     "express": "^4.17.1",
     "express-validator": "^6.10.1",
     "jsonwebtoken": "^8.5.1",
+    "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.12.5",
     "open": "^8.0.6",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.7",
+    "ws": "^6.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.16",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
-    "concurrently": "^6.0.2",
+    "css-loader": "^5.2.4",
+    "file-loader": "^6.2.0",
+    "history": "^4.10.1",
     "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.5.0",
     "nodemon": "^2.0.7",
     "prettier": "2.2.1",
+    "style-loader": "^2.0.0",
     "webpack": "^5.35.1",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2",

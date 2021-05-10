@@ -1,0 +1,44 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+#loginPage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#loginCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    width: 400px;
+    border: 1px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: 50px;
+}
+#loginBtn {
+    margin-bottom: 0;
+    height: 50px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.input-field {
+    margin: 7px 0;
+}
+.inline {
+    margin-left: 3px;
+    display: inline;
+}
+.validate {
+    color: #4CAF50;
+}
+
+::placeholder{
+    color: #b2b8ff;
+    padding-left: 3px;
+}

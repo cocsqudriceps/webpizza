@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const App = () => {
+export const RegisterPage = () => {
 	return (
 		<div>
-			<h1>Test2</h1>
+			Register
 		</div>
 	)
 }

@@ -5,9 +5,9 @@ import config from 'config'
 import User from '../models/User'
 import { check, validationResult } from 'express-validator'
 
-const router = Router()
+export const authRouter = Router()
 
-router.post(
+authRouter.post(
 	'/register',
 	check('email', 'Email is not valid!').isEmail(),
 	check('password', 'Password should be more than 5 symbols!').isLength({
@@ -45,7 +45,7 @@ router.post(
 		}
 	}
 )
-router.post(
+authRouter.post(
 	'/login',
 	check('email').normalizeEmail().isEmail(),
 	check('password').exists(),
@@ -60,7 +60,6 @@ router.post(
 			}
 
 			const { email, password } = req.body
-
 			const user = await User.findOne({ email })
 			if (!user) {
 				return res
@@ -85,4 +84,4 @@ router.post(
 	}
 )
 
-export default router
+
