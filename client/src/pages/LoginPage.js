@@ -2,6 +2,8 @@ import React from 'react'
 import {LoginCard} from '../components/LoginCard'
 import logo from '../../public/pizza.png'
 
+import {Link} from 'react-router-dom'
+
 export const LoginPage = () => {
 
 
@@ -11,7 +13,7 @@ export const LoginPage = () => {
             <LoginCard/>
             <div>
                 <p className='inline indigo-text text-lighten-3'>Are you new to ReactPizza?</p>
-                <a className='inline'>Sign Up</a>
+                <Link to='/register' className='inline'>Sign Up</Link>
             </div>
         </div>
     )

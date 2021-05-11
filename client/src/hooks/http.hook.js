@@ -3,6 +3,7 @@ import 'regenerator-runtime/runtime'
 
 export const useHttp = () => {
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
         setLoading(true)
@@ -15,7 +16,9 @@ export const useHttp = () => {
             const data = await response.json()
 
             if (!response.ok) {
-                throw new Error(data.message || 'Error in http hook')
+                data.errors.map(elem => {
+                    setError(elem.msg)
+                })
             }
 
             setLoading(false)
@@ -23,10 +26,12 @@ export const useHttp = () => {
             return data
         } catch (e) {
             setLoading(false)
-            console.error(e)
         }
 
     }, [])
 
-    return {loading, request}
+    const clearError = useCallback(() => setError(null),[])
+
+
+    return {loading, request, error, clearError}
 }

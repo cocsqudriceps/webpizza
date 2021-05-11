@@ -1,14 +1,21 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import LockIcon from '@material-ui/icons/LockOutlined'
 import EmailIcon from '@material-ui/icons/EmailOutlined'
-import {useHttp} from "../hooks/http.hook";
-import M from 'materialize-css'
+import {useHttp} from '../hooks/http.hook'
+import {useMessage} from "../hooks/message.hook";
 
 export const LoginCard = () => {
-    const {loading, request} = useHttp()
+    const message = useMessage()
+    const {loading, request, error, clearError} = useHttp()
     const [form, setForm] = useState({
         email: '', password: ''
     })
+
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error])
+
     const changeHandler = event => {
         setForm({...form, [event.target.name]: event.target.value})
     }
@@ -16,7 +23,7 @@ export const LoginCard = () => {
     const loginHandler = async () => {
         try {
             const data = await request('/api/auth/register', 'POST', {...form})
-            console.log(data)
+            message(data.message)
         } catch (e) {
             console.error(e)
         }

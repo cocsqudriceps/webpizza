@@ -32,6 +32,11 @@ const frontend = {
 	module: {
 		rules: [
 			{
+				test: /\.js$/,
+				enforce: 'pre',
+				use: ['source-map-loader'],
+			},
+			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: 'babel-loader',
@@ -46,6 +51,7 @@ const frontend = {
 				exclude: /node_modules/,
 				use: ['file-loader']
 			}
+
 		],
 	},
 }

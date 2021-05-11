@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import config from 'config'
 import ws from 'ws'
-//import open from 'open'
+import open from 'open'
 import {indexRouter} from './routes/index.router'
 import bodyParser from "body-parser";
 

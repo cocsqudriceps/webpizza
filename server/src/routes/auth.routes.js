@@ -18,8 +18,7 @@ authRouter.post(
 			const errors = validationResult(req)
 			if (!errors.isEmpty()) {
 				return res.status(400).json({
-					message: 'The registration data is not valid!',
-					errors: errors.array(),
+					errors: errors.array()
 				})
 			}
 
@@ -54,8 +53,7 @@ authRouter.post(
 			const errors = validationResult(req)
 			if (!errors.isEmpty()) {
 				return res.status(400).json({
-					message: 'The login data is not valid!',
-					errors: errors.array(),
+					errors: errors.array()
 				})
 			}
 
