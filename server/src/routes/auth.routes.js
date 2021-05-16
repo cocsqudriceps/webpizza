@@ -11,7 +11,7 @@ authRouter.post(
 	'/register',
 	check('email', 'Email is not valid!').isEmail(),
 	check('password', 'Password should be more than 5 symbols!').isLength({
-		min: 5,
+		min: 5
 	}),
 	async (req, res) => {
 		try {
@@ -22,17 +22,17 @@ authRouter.post(
 				})
 			}
 
-			const { email, password } = req.body
+			const { email, password, FirstName, LastName } = req.body
 			const candidate = await User.findOne({ email })
 
 			if (candidate) {
 				return res
 					.status(400)
-					.json({ message: 'User with this email already exist!' })
+					.json({ message: ['User with this email already exist!'] })
 			}
 
 			const hashedPassword = await bcrypt.hash(password, 10)
-			const user = new User({ email, password: hashedPassword })
+			const user = new User({ email, password: hashedPassword, FirstName, LastName })
 
 			await user.save()
 
@@ -46,8 +46,8 @@ authRouter.post(
 )
 authRouter.post(
 	'/login',
-	check('email').normalizeEmail().isEmail(),
-	check('password').exists(),
+	check('email', 'Email is not valid!').normalizeEmail().isEmail(),
+	check('password', 'Password field cant be empty!').exists(),
 	async (req, res) => {
 		try {
 			const errors = validationResult(req)
@@ -62,16 +62,16 @@ authRouter.post(
 			if (!user) {
 				return res
 					.status(400)
-					.json({ message: "User with this email wasn't found" })
+					.json({ message: 'User with this email wasn\'t found' })
 			}
 
 			const isMatch = await bcrypt.compare(password, user.password)
 			if (!isMatch) {
-				return res.status(400).json({ message: "The password isn't correct!" })
+				return res.status(400).json({ message: 'The password isn\'t correct!' })
 			}
 
 			const token = jwt.sign({ userId: user.id }, config.get('jwt'), {
-				expiresIn: '1h',
+				expiresIn: '1h'
 			})
 			res.status(200).json({ token })
 		} catch (e) {

@@ -1,7 +1,21 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-#loginPage {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+html {
+    background: linear-gradient(to right, #57c1eb 0%, #246fa8 100%);
+}
+
+#authPage {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -10,6 +24,7 @@
     height: 100%;
     width: 100%;
 }
+
 #loginCard {
     display: flex;
     flex-direction: column;
@@ -21,24 +36,96 @@
     margin-bottom: 15px;
     margin-top: 50px;
 }
+
+#registerCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    width: 800px;
+    border: 1px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
 #loginBtn {
     margin-bottom: 0;
     height: 50px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+#chat-container {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    height: 400px;
+    width: 200px;
+    bottom: 20px;
+    right: 20px;
+}
+
+#new-message-field {
+    position: absolute;
+    bottom: 0;
+    width: 160px;
+    height: 40px;
+    border-bottom-left-radius: 10px;
+}
+
+#chat-send-btn {
+    position: absolute;
+    background: green;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 10px;
+}
+
+#messages-field {
+    display: flex;
+    flex-direction: column-reverse;
+    background: #91c5ff;
+    height: 90%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#chat-message {
+    height: 20px;
+    background: burlywood;
+}
+
+#chat-input {
+    border-bottom: none !important;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+#chat-input:focus {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
 .input-field {
     margin: 7px 0;
 }
+
 .inline {
     margin-left: 3px;
     display: inline;
 }
+
 .validate {
     color: #4CAF50;
 }
 
-::placeholder{
+::placeholder {
     color: #b2b8ff;
     padding-left: 3px;
 }

@@ -24,6 +24,7 @@ const frontend = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './client/public/index.html',
+			favicon: './client/public/pizza.png'
 		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css',
