@@ -9,7 +9,7 @@ export const Chat = () => {
 	let socket = useRef(null)
 
 	useEffect(() => {
-		socket.current = new WebSocket('ws://localhost:5000')
+		socket.current = new WebSocket(`ws://localhost:5000/?token=${token}`)
 	}, [])
 
 	useEffect(() => {
