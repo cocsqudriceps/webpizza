@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { ChatMessage } from './ChatMessage'
-import { AuthContext } from '../context/AuthContext'
+import  AuthContext  from '../context/AuthContext'
 
 export const Chat = () => {
 	const [message, setMessage] = useState(null)

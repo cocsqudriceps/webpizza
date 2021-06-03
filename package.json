@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./dist/server.bundle.js",
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development",
-    "devServ": "webpack serve --mode development --open"
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack --mode development"
   },
   "keywords": [],
   "author": "Gogitidze Maxim <cocsqudriceps@yandex.ru>",
@@ -21,7 +20,7 @@
     "jsxSingleQuote": true,
     "jsxBracketSameLine": false,
     "arrowParens": "avoid",
-    "useTabs": true
+    "trailingComma": "es5"
   },
   "dependencies": {
     "@material-ui/icons": "^4.11.2",
@@ -46,7 +45,17 @@
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
+    "css-minimizer-webpack-plugin": "^3.0.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-webpack-plugin": "^2.5.4",
     "file-loader": "^6.2.0",
     "history": "^4.10.1",
     "html-webpack-plugin": "^5.3.1",
@@ -55,6 +64,7 @@
     "prettier": "2.2.1",
     "source-map-loader": "^2.0.1",
     "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.2",
     "webpack": "^5.35.1",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2",
