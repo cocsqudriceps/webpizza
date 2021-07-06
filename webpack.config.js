@@ -42,7 +42,7 @@ const frontend = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './client/public/index.html',
-      favicon: './client/public/pizza.png',
+      favicon: './client/public/chat.png',
       minify: {
         collapseWhitespace: !isDev,
       },

@@ -59,18 +59,16 @@ html {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.3fr 2.4fr 0.3fr;
-    height: 475px;
-    width: 300px;
+    margin: 200px auto;
+    height: 500px;
+    width: 500px;
     gap: 0 0;
     grid-template-areas:
     "chat-title"
     "chat-message-list"
     "chat-form";
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    border-radius: 10px;
     background: #FFF;
+    border-radius: 10px
 }
 
 #chat-title,

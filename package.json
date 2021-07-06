@@ -1,7 +1,7 @@
 {
-  "name": "webpizza",
+  "name": "webchat",
   "version": "1.0.0",
-  "description": "Mern pizza project",
+  "description": "Mern websocket chat",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./dist/server.bundle.js",
@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development webpack --mode development"
   },
   "keywords": [],
-  "author": "Gogitidze Maxim <cocsqudriceps@yandex.ru>",
+  "author": "Gogitidze Maxim <maxgogitidze@gmail.com>",
   "license": "ISC",
   "browserslist": [
     "> 0.25%, not dead"

@@ -1,6 +1,6 @@
 import React from 'react'
 import { LoginCard } from '../components/LoginCard'
-import logo from '../../public/pizza.png'
+import logo from '../../public/chat.png'
 import { Link } from 'react-router-dom'
 
 export default () => (
@@ -9,7 +9,7 @@ export default () => (
     <LoginCard />
     <div>
       <p className='inline indigo-text text-lighten-3'>
-        Are you new to ReactPizza?
+        Are you new to ReactChat?
       </p>
       <Link to='/register' className='inline'>
         Sign Up
